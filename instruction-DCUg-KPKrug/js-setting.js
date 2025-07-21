@@ -25,3 +25,6 @@ document.addEventListener('DOMContentLoaded', function() {
   var video = document.getElementById('background-video');
   video.play();
 });
+
+const currentYear = new Date().getFullYear();
+document.getElementById('currentYear').textContent = currentYear;
