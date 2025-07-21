@@ -26,5 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
   video.play();
 });
 
-const currentYear = new Date().getFullYear();
-document.getElementById('currentYear').textContent = currentYear;
+document.addEventListener('DOMContentLoaded', () => {
+    const yearElement = document.getElementById('currentYear');
+    yearElement.textContent = new Date().getFullYear();
+});
