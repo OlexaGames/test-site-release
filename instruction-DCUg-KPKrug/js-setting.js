@@ -27,6 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-    const yearElement = document.getElementById('currentYear');
-    yearElement.textContent = new Date().getFullYear();
+    const copyrightElement = document.querySelector('.copyright');
+    const currentYear = new Date().getFullYear();
+    copyrightElement.textContent = `Ⓒ1992-${currentYear} ООО НПЦ «Промавтоматика»`;
 });
