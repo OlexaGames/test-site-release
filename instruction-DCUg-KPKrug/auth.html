@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="img-css/favicon.jpg" type="image/x-icon">
+	<title>Вход на сайт</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="auth.css">
+	<link rel="stylesheet" type="text/css" href="../instruction-DCUg-KPKrug/media/media-main.css">
+	<script src="js-setting.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+</head>
+<body>
+	<h2 class="chapter-title chapter-alt">Вход на сайт</h2>
+	<hr class="line-1">
+	<div class="block-auth">
+		<form id="loginForm" class="login">
+			<label for="password" class="label-enter">Введите пароль</label>
+            <input type="password" id="password" required class="field-pass">
+            <button type="submit" class="button-enter">Войти</button>
+            <p id="error" class="error"></p>
+		</form>
+	</div>
+	<script src="auth-element/login.js"></script>
+</body>
+</html>
