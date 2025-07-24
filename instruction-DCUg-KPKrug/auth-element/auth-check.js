@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
     if (!sessionStorage.getItem('isAuthenticated')) {
-        window.location.href = '../instruction-DCUg-KPKrug/auth.html';
+        window.location.href = '/test-site-release/instruction-DCUg-KPKrug/auth.html';
     }
 });
