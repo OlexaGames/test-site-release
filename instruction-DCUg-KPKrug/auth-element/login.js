@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const correctHash = '0b45d3f1c5c6b8a4f0b3e8a2c9d1e0f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7';
+    const correctHash = '8da1b3a64be6a1b28464323237655d6cfc518c2b4930b683db273d39a9a3b601';
     const form = document.getElementById('loginForm');
     const error = document.getElementById('error');
 
