@@ -32,7 +32,6 @@ document.addEventListener("DOMContentLoaded", function() {
       element.classList.add("show");
     }
   }
-});
 
   var showSubElementId = localStorage.getItem("showSubElementId");
   if (showSubElementId) {
@@ -53,4 +52,5 @@ document.addEventListener('DOMContentLoaded', () => {
     const currentYear = new Date().getFullYear();
     copyrightElement.textContent = `Ⓒ1992-${currentYear} ООО НПЦ «Промавтоматика»`;
 });
+
 
