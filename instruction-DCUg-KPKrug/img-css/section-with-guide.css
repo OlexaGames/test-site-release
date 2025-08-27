@@ -111,3 +111,19 @@ footer {
 .title-section {
 	margin-top: 4.2em;
 }
+
+.sub-dropbtn {
+	width: 95%;
+    font-size: 1.36em;
+    height: 65px;
+}
+
+.sub-dropdown-content {
+	background-color: transparent;
+    width: 95%;
+    border: none;
+}
+
+.subsection {
+	margin: 15px 0 15px 0;
+}
