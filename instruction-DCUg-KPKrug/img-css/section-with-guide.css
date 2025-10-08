@@ -25,6 +25,7 @@ header {
 
 .arrow {
 	width: 20px;
+	padding-left: 28px;
 }
 
 footer {
@@ -115,7 +116,8 @@ footer {
 .sub-dropbtn {
 	width: 95%;
     font-size: 1.36em;
-    height: 65px;
+    height: auto;
+	padding: 20px 20px 20px 20px;
 }
 
 .sub-dropdown-content {
@@ -127,3 +129,4 @@ footer {
 .subsection {
 	margin: 15px 0 15px 0;
 }
+
