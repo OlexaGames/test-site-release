@@ -211,7 +211,7 @@ p, ol {
 
 /* ---Замена и настройка модулей--- */
 
-.image-guide {
+.image-guide-rep {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -230,4 +230,5 @@ p, ol {
     font-weight: 600;
 	text-align: center;
 }
+
 
