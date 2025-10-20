@@ -139,6 +139,10 @@
 	.text-guide p {
 		text-indent: 0;
 	}
+
+	.image-additional p {
+		text-indent: 0;
+	}
 }     /* Разрешение 320 - 767 */
 
 /* --- Прочие настройки ---  */
@@ -229,3 +233,4 @@
 	}
 
 }*/
+
