@@ -25,7 +25,7 @@
     <div id="sectionsContainer"></div>
 
     <script>
-        // Функция для загрузки данных из нескольких файлов
+// Функция для загрузки данных из нескольких файлов
         async function loadData() {
             try {
                 // Загружаем первый файл
@@ -76,8 +76,8 @@
                         row.innerHTML = `
                             <td class="td-name">${item.name}</td>
                             <td class="td-num">${item.num}</td>
-                            <td class="td-code1">${item.code1.replace(/[{()}]/g, '')}</td>
-                            <td class="td-code2">${item.code2.replace(/[{()}]/g, '')}</td>
+                            <td class="td-code1">${item.code1}</td>
+                            <td class="td-code2">${item.code2}</td>
                         `;
                         tbody.appendChild(row);
                     });
@@ -129,3 +129,4 @@
 </body>
 
 </html>
+
