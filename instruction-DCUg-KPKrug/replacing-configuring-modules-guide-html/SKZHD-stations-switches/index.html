@@ -1,29 +1,33 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html>
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Станции СКЖД - выставление джамперов</title>
+    <link rel="icon" href="../../img-css/favicon.jpg" type="image/x-icon">
+    <!-- <link rel="stylesheet" type="text/css" href="../../instruction-DCUg-KPKrug/style.css">
+    <link rel="stylesheet" type="text/css" href="../../instruction-DCUg-KPKrug/media/media-replacing.css">
+    <script src="../img-css/menu-burger.js"></script>
+    <script src="../../instruction-DCUg-KPKrug/js-setting.js"></script>
+    <link rel="stylesheet" type="text/css" href="../img-css/modules.css">     -->
+    <!-- <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Участки с данными и поиском</title>
+    <title>Участки с данными и поиском</title> -->
     <style>
-        body { font-family: Arial, sans-serif; margin: 20px; }
+        /* body { font-family: Arial, sans-serif; margin: 20px; }
         input { margin-bottom: 10px; padding: 8px; width: 300px; }
         .section { margin-bottom: 20px; }
         .section h2 { margin-bottom: 10px; }
         table { border-collapse: collapse; width: 100%; }
         th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
         th { background-color: #f2f2f2; }
-        tr:nth-child(even) { background-color: #f9f9f9; }
+        tr:nth-child(even) { background-color: #f9f9f9; } */
     </style>
 </head>
 <body>
     <h1>Данные по участкам с поиском по названию</h1>
-    
-    <!-- Поле для поиска -->
     <input type="text" id="searchInput" placeholder="Поиск по названию..." onkeyup="searchSections()">
-    
-    <!-- Контейнер для участков (заполнится JS) -->
     <div id="sectionsContainer"></div>
-
     <script>
 // Функция для загрузки данных из нескольких файлов
         async function loadData() {
@@ -129,4 +133,5 @@
 </body>
 
 </html>
+
 
