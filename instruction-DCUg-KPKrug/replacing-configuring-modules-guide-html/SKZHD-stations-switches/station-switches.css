@@ -1,4 +1,4 @@
-table {
+/* table {
   border-collapse: collapse;
   width: 100%;
 }
@@ -7,10 +7,10 @@ th, td {
   border: 1px black solid;
   padding: 8px;
   text-align: left;
-}
+} */
 
 body { 
-  font-family: Arial, sans-serif; 
+  /* font-family: Arial, sans-serif;  */
   margin: 20px; 
 }
         
