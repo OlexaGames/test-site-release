@@ -9,9 +9,13 @@
                 const response2 = await fetch('data2.json');
                 if (!response2.ok) throw new Error('Ошибка загрузки data2.json: ' + response2.status);
                 const data2 = await response2.json();
-                
+
+                const response3 = await fetch('data3.json');
+                if (!response3.ok) throw new Error('Ошибка загрузки data3.json: ' + response2.status);
+                const data3 = await response3.json();
+
                 // Объединяем все участки
-                const allSections = [...data1, ...data2];
+                const allSections = [...data1, ...data2, ...data3];
                 
                 // Получаем контейнер
                 const container = document.getElementById('sectionsContainer');
