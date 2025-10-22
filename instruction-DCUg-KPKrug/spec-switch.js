@@ -97,4 +97,3 @@
 
         // Загружаем данные при загрузке страницы
         window.onload = loadData;
-    </script>
