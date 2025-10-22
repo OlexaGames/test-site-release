@@ -34,10 +34,10 @@
                     const thead = document.createElement('thead');
                     thead.innerHTML = `
                         <tr>
-                            <th class="th-name">Название</th>
-                            <th class="th-num">Номер</th>
-                            <th class="th-code1">Код 1</th>
-                            <th class="th-code2">Код 2</th>
+                            <th class="th-name">Название станции</th>
+                            <th class="th-num">Номер станции</th>
+                            <th class="th-code1">Код станции</th>
+                            <th class="th-code2">Код участка</th>
                         </tr>
                     `;
                     table.appendChild(thead);
