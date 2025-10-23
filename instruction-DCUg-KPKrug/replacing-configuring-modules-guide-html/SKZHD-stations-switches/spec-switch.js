@@ -94,7 +94,7 @@
                 
                 // Фильтруем строки (начиная с 1, чтобы пропустить thead)
                 for (let i = 1; i < rows.length; i++) {
-                    let td = rows[i].getElementsByTagName('td')[0]; // Первая колонка — "name"
+                    let td = rows[i].getElementsByTagName('td')[1]; // Первая колонка — "name"
                     if (td) {
                         let txtValue = td.textContent || td.innerText;
                         if (txtValue.toLowerCase().indexOf(filter) > -1) {
