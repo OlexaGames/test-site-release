@@ -16,9 +16,18 @@
                 const response4 = await fetch('data4.json');
                 if (!response4.ok) throw new Error('Ошибка загрузки data4.json: ' + response4.status);
                 const data4 = await response4.json();
+
+                const response5 = await fetch('data5.json');
+                if (!response5.ok) throw new Error('Ошибка загрузки data5.json: ' + response5.status);
+                const data5 = await response5.json();
+
+                const response6 = await fetch('data6.json');
+                if (!response6.ok) throw new Error('Ошибка загрузки data6.json: ' + response6.status);
+                const data6 = await response6.json();
                   
                 // Объединяем все участки
-                const allSections = [...data1, ...data2, ...data3, ...data4];
+                const allSections = [...data1, ...data2, ...data3, ...data4,
+                                          ...data5, ...data6];
                 
                 // Получаем контейнер
                 const container = document.getElementById('sectionsContainer');
