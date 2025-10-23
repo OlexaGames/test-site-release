@@ -50,8 +50,8 @@
                     const thead = document.createElement('thead');
                     thead.innerHTML = `
                         <tr>
+                            <th class="th-num">№</th>
                             <th class="th-name">Название станции</th>
-                            <th class="th-num">Номер станции</th>
                             <th class="th-code1">Код станции</th>
                             <th class="th-code2">Код участка</th>
                         </tr>
@@ -62,8 +62,8 @@
                     section.items.forEach(item => {
                         const row = document.createElement('tr');
                         row.innerHTML = `
-                            <td class="td-name">${item.name}</td>
                             <td class="td-num">${item.num}</td>
+                            <td class="td-name">${item.name}</td>
                             <td class="td-code1">${item.code1}</td>
                             <td class="td-code2">${item.code2}</td>
                         `;
