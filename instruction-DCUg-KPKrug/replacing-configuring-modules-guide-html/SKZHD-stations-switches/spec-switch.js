@@ -1,21 +1,24 @@
       async function loadData() {
             try {
-                // Загружаем первый файл
+                  // Для загрузки файлов
                 const response1 = await fetch('data1.json');
                 if (!response1.ok) throw new Error('Ошибка загрузки data1.json: ' + response1.status);
                 const data1 = await response1.json();
                 
-                // Загружаем второй файл
                 const response2 = await fetch('data2.json');
                 if (!response2.ok) throw new Error('Ошибка загрузки data2.json: ' + response2.status);
                 const data2 = await response2.json();
 
                 const response3 = await fetch('data3.json');
-                if (!response3.ok) throw new Error('Ошибка загрузки data3.json: ' + response2.status);
+                if (!response3.ok) throw new Error('Ошибка загрузки data3.json: ' + response3.status);
                 const data3 = await response3.json();
 
+                const response4 = await fetch('data4.json');
+                if (!response4.ok) throw new Error('Ошибка загрузки data4.json: ' + response4.status);
+                const data4 = await response4.json();
+                  
                 // Объединяем все участки
-                const allSections = [...data1, ...data2, ...data3];
+                const allSections = [...data1, ...data2, ...data3, ...data4];
                 
                 // Получаем контейнер
                 const container = document.getElementById('sectionsContainer');
