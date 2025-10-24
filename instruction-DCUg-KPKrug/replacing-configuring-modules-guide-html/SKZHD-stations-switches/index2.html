@@ -110,7 +110,7 @@
             }
         }
 
-        // Функция для отображения всех участков в указанном контейнере
+        // Функция для отображения участков в указанном контейнере
         function renderSections(containerId, filter = '') {
             const container = document.getElementById(containerId);
             container.innerHTML = ''; // Очищаем
@@ -118,7 +118,7 @@
             allSections.forEach(section => {
                 const sectionDiv = document.createElement('div');
                 sectionDiv.className = 'section';
-                sectionDiv.id = 'section-' + section.section.replace(/\s+/g, '-') + '-' + containerId; // Уникальный ID
+                sectionDiv.id = 'section-' + section.section.replace(/\s+/g, '-') + '-' + containerId;
                 
                 const header = document.createElement('h2');
                 header.textContent = section.section;
@@ -145,46 +145,28 @@
                         <td class="td-code1">${item.code1}</td>
                         <td class="td-code2">${item.code2}</td>
                     `;
+                    // Если есть фильтр, скрываем строки, не соответствующие ему
+                    if (filter && !item.name.toLowerCase().includes(filter)) {
+                        row.style.display = 'none';
+                    }
                     tbody.appendChild(row);
                 });
                 table.appendChild(tbody);
                 
-                sectionDiv.appendChild(table);
-                container.appendChild(sectionDiv);
-            });
-            
-            // Если есть фильтр, применяем поиск
-            if (filter) {
-                searchSections();
-            }
-        }
-
-        // Функция поиска (адаптирована для searchContainer)
-        function searchSections() {
-            let filter = document.getElementById("searchInput").value.toLowerCase();
-            
-            let sections = document.querySelectorAll('#searchContainer .section');
-            
-            sections.forEach(section => {
-                let table = section.querySelector('table');
-                let rows = table.getElementsByTagName('tr');
-                let visibleRows = 0;
-                
-                for (let i = 1; i < rows.length; i++) {
-                    let td = rows[i].getElementsByTagName('td')[0];
-                    if (td) {
-                        let txtValue = td.textContent || td.innerText;
-                        if (txtValue.toLowerCase().indexOf(filter) > -1) {
-                            rows[i].style.display = "";
-                            visibleRows++;
-                        } else {
-                            rows[i].style.display = "none";
-                        }
-                    }
+                // Если есть фильтр, скрываем участок, если нет видимых строк
+                if (filter) {
+                    const visibleRows = Array.from(tbody.getElementsByTagName('tr')).filter(row => row.style.display !== 'none').length;
+                    sectionDiv.style.display = visibleRows === 0 ? 'none' : 'block';
                 }
                 
-                section.style.display = visibleRows === 0 ? "none" : "block";
+                container.appendChild(sectionDiv);
             });
+        }
+
+        // Функция поиска
+        function searchSections() {
+            let filter = document.getElementById("searchInput").value.toLowerCase();
+            renderSections('sectionsContainerSearch', filter); // Перерисовываем с фильтром
         }
 
         // Показать режим поиска
@@ -193,7 +175,7 @@
             document.getElementById('searchContainer').style.display = 'block';
             document.getElementById('fullListContainer').style.display = 'none';
             document.getElementById('searchInput').value = ''; // Очистить поиск
-            renderSections('sectionsContainerSearch'); // Отобразить все, поиск применится при вводе
+            document.getElementById('sectionsContainerSearch').innerHTML = ''; // Изначально пусто
         }
 
         // Показать полный список
@@ -209,7 +191,6 @@
             document.getElementById('menu').style.display = 'block';
             document.getElementById('searchContainer').style.display = 'none';
             document.getElementById('fullListContainer').style.display = 'none';
-            // Очистить контейнеры, чтобы не тратить память, но не обязательно
             document.getElementById('sectionsContainerSearch').innerHTML = '';
             document.getElementById('sectionsContainerFull').innerHTML = '';
         }
