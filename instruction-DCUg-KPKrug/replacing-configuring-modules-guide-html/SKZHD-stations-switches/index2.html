@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Участки с данными и поиском</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        input {
+            margin-bottom: 10px;
+            padding: 8px;
+            width: 300px;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .section h2 {
+            margin-bottom: 10px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        /* Стили для классов th и td */
+        .th-name, .td-name {
+            width: 30%;
+            font-weight: bold;
+        }
+        .th-num, .td-num {
+            width: 10%;
+            text-align: center;
+        }
+        .th-code1, .td-code1, .th-code2, .td-code2 {
+            width: 30%;
+            font-family: monospace;
+            text-align: center;
+        }
+        /* Стили для меню и кнопок */
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        #menu {
+            text-align: center;
+        }
+        #searchContainer, #fullListContainer {
+            display: none;
+        }
+        #backButtonSearch, #backButtonFull {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Данные по участкам</h1>
+    
+    <!-- Меню с кнопками -->
+    <div id="menu">
+        <button onclick="showSearchMode()">Поиск по станции</button>
+        <button onclick="showFullList()">Показать весь список</button>
+    </div>
+    
+    <!-- Контейнер для режима поиска -->
+    <div id="searchContainer">
+        <input type="text" id="searchInput" placeholder="Поиск по названию..." onkeyup="searchSections()">
+        <div id="sectionsContainerSearch"></div>
+        <button id="backButtonSearch" onclick="backToMenu()">Вернуться к меню</button>
+    </div>
+    
+    <!-- Контейнер для полного списка -->
+    <div id="fullListContainer">
+        <div id="sectionsContainerFull"></div>
+        <button id="backButtonFull" onclick="backToMenu()">Вернуться к меню</button>
+    </div>
+
+    <script>
+        let allSections = []; // Глобальная переменная для хранения данных
+
+        // Функция для загрузки данных из файлов
+        async function loadData() {
+            try {
+                const response1 = await fetch('data1.json');
+                if (!response1.ok) throw new Error('Ошибка загрузки data1.json: ' + response1.status);
+                const data1 = await response1.json();
+                
+                const response2 = await fetch('data2.json');
+                if (!response2.ok) throw new Error('Ошибка загрузки data2.json: ' + response2.status);
+                const data2 = await response2.json();
+                
+                allSections = [...data1, ...data2];
+            } catch (error) {
+                console.error('Ошибка:', error);
+                alert(error.message);
+            }
+        }
+
+        // Функция для отображения всех участков в указанном контейнере
+        function renderSections(containerId, filter = '') {
+            const container = document.getElementById(containerId);
+            container.innerHTML = ''; // Очищаем
+            
+            allSections.forEach(section => {
+                const sectionDiv = document.createElement('div');
+                sectionDiv.className = 'section';
+                sectionDiv.id = 'section-' + section.section.replace(/\s+/g, '-') + '-' + containerId; // Уникальный ID
+                
+                const header = document.createElement('h2');
+                header.textContent = section.section;
+                sectionDiv.appendChild(header);
+                
+                const table = document.createElement('table');
+                const thead = document.createElement('thead');
+                thead.innerHTML = `
+                    <tr>
+                        <th class="th-name">Название</th>
+                        <th class="th-num">Номер</th>
+                        <th class="th-code1">Код 1</th>
+                        <th class="th-code2">Код 2</th>
+                    </tr>
+                `;
+                table.appendChild(thead);
+                
+                const tbody = document.createElement('tbody');
+                section.items.forEach(item => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td class="td-name">${item.name}</td>
+                        <td class="td-num">${item.num}</td>
+                        <td class="td-code1">${item.code1}</td>
+                        <td class="td-code2">${item.code2}</td>
+                    `;
+                    tbody.appendChild(row);
+                });
+                table.appendChild(tbody);
+                
+                sectionDiv.appendChild(table);
+                container.appendChild(sectionDiv);
+            });
+            
+            // Если есть фильтр, применяем поиск
+            if (filter) {
+                searchSections();
+            }
+        }
+
+        // Функция поиска (адаптирована для searchContainer)
+        function searchSections() {
+            let filter = document.getElementById("searchInput").value.toLowerCase();
+            
+            let sections = document.querySelectorAll('#searchContainer .section');
+            
+            sections.forEach(section => {
+                let table = section.querySelector('table');
+                let rows = table.getElementsByTagName('tr');
+                let visibleRows = 0;
+                
+                for (let i = 1; i < rows.length; i++) {
+                    let td = rows[i].getElementsByTagName('td')[0];
+                    if (td) {
+                        let txtValue = td.textContent || td.innerText;
+                        if (txtValue.toLowerCase().indexOf(filter) > -1) {
+                            rows[i].style.display = "";
+                            visibleRows++;
+                        } else {
+                            rows[i].style.display = "none";
+                        }
+                    }
+                }
+                
+                section.style.display = visibleRows === 0 ? "none" : "block";
+            });
+        }
+
+        // Показать режим поиска
+        function showSearchMode() {
+            document.getElementById('menu').style.display = 'none';
+            document.getElementById('searchContainer').style.display = 'block';
+            document.getElementById('fullListContainer').style.display = 'none';
+            document.getElementById('searchInput').value = ''; // Очистить поиск
+            renderSections('sectionsContainerSearch'); // Отобразить все, поиск применится при вводе
+        }
+
+        // Показать полный список
+        function showFullList() {
+            document.getElementById('menu').style.display = 'none';
+            document.getElementById('searchContainer').style.display = 'none';
+            document.getElementById('fullListContainer').style.display = 'block';
+            renderSections('sectionsContainerFull'); // Отобразить все без фильтра
+        }
+
+        // Вернуться к меню
+        function backToMenu() {
+            document.getElementById('menu').style.display = 'block';
+            document.getElementById('searchContainer').style.display = 'none';
+            document.getElementById('fullListContainer').style.display = 'none';
+            // Очистить контейнеры, чтобы не тратить память, но не обязательно
+            document.getElementById('sectionsContainerSearch').innerHTML = '';
+            document.getElementById('sectionsContainerFull').innerHTML = '';
+        }
+
+        // Загружаем данные при загрузке страницы
+        window.onload = loadData;
+    </script>
+</body>
+</html>
