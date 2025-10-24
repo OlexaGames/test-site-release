@@ -98,9 +98,14 @@ tr:nth-child(even) {
   background-color: #f9f9f9; 
 }
 
-.td-code1, .td-code2, .td-num, .th-code1, .th-num, .th-code2 {
+.td-code1, .td-code2, .th-code1, .th-code2 {
     text-align: center;
     width: 20%;
+}
+
+.td-num, .th-num {
+    text-align: center;
+    width: 5%;
 }
 
 .th-name, .td-name {
