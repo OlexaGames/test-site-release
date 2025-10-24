@@ -105,7 +105,7 @@ tr:nth-child(even) {
 
 .td-num, .th-num {
     text-align: center;
-    width: 5%;
+    width: 1%;
 }
 
 .th-name, .td-name {
