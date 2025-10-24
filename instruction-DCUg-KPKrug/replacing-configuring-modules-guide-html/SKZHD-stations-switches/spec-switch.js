@@ -25,9 +25,51 @@
                 if (!response4.ok) throw new Error('Ошибка загрузки data4.json: ' + response4.status);
                 const data4 = await response4.json();
                   
+                const response5 = await fetch('data5.json');
+                if (!response5.ok) throw new Error('Ошибка загрузки data5.json: ' + response5.status);
+                const data5 = await response5.json();
+                  
+                const response6 = await fetch('data6.json');
+                if (!response6.ok) throw new Error('Ошибка загрузки data6.json: ' + response6.status);
+                const data6 = await response6.json();
+
+                const response7 = await fetch('data7.json');
+                if (!response7.ok) throw new Error('Ошибка загрузки data7.json: ' + response7.status);
+                const data7 = await response7.json();                  
+
+                const response8 = await fetch('data8.json');
+                if (!response8.ok) throw new Error('Ошибка загрузки data8.json: ' + response8.status);
+                const data8 = await response8.json();
+
+                const response9 = await fetch('data9.json');
+                if (!response9.ok) throw new Error('Ошибка загрузки data9.json: ' + response9.status);
+                const data9 = await response9.json();
+
+                const response10 = await fetch('data10.json');
+                if (!response10.ok) throw new Error('Ошибка загрузки data10.json: ' + response10.status);
+                const data10 = await response10.json();
+
+                const response11 = await fetch('data11.json');
+                if (!response11.ok) throw new Error('Ошибка загрузки data11.json: ' + response11.status);
+                const data11 = await response11.json();
+
+                const response12 = await fetch('data12.json');
+                if (!response12.ok) throw new Error('Ошибка загрузки data12.json: ' + response12.status);
+                const data12 = await response12.json();
+
+                const response13 = await fetch('data13.json');
+                if (!response13.ok) throw new Error('Ошибка загрузки data13.json: ' + response13.status);
+                const data13 = await response13.json();
+
+                const response14 = await fetch('data14.json');
+                if (!response14.ok) throw new Error('Ошибка загрузки data14.json: ' + response14.status);
+                const data14 = await response14.json();
+                  
                 // Объединяем все участки
                 const allSections = [...data, ...data0, ...data1, ...data2,
-                                          ...data3, ...data4];
+                                          ...data3, ...data4, ...data5, ...data6,
+                                          ...data7, ...data8, ...data9, ...data10,
+                                          ...data11, ...data12, ...data13, ...data14];
                 
                 // Получаем контейнер
                 const container = document.getElementById('sectionsContainer');
