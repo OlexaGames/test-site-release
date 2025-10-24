@@ -65,6 +65,11 @@
         #backButtonSearch, #backButtonFull {
             margin-top: 20px;
         }
+
+        .item-name { display: inline-block; width: 30%; font-weight: bold; }
+        .item-num { display: inline-block; width: 10%; text-align: center; }
+        .item-code1, .item-code2 { display: inline-block; width: 30%; font-family: monospace; text-align: center; }
+        
     </style>
 </head>
 <body>
@@ -166,7 +171,7 @@
         // Функция поиска
         function searchSections() {
             let filter = document.getElementById("searchInput").value.toLowerCase();
-            renderSections('sectionsContainerSearch', filter); // Перерисовываем с фильтром
+            renderSections('sectionsContainerSearch', filter);
         }
 
         // Показать режим поиска
