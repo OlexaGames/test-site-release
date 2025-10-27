@@ -133,14 +133,12 @@ input {
 table {
     border-collapse: collapse;
     width: 100%;
-    border: 2px solid red; /* Для отладки */
 }
 
 th, td {
     border: 1px solid #ddd;
     padding: 8px;
     text-align: left;
-    border: 1px solid blue; /* Для отладки */
 }
 
 th {
@@ -189,5 +187,31 @@ button:hover {
 }
 
 #backButtonSearch, #backButtonFull {
-    margin-top: 20px;
+    margin: 10px;
+}
+
+/* Стили для строки поиска и кнопки очистки */
+.search-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+#searchInput {
+    padding-right: 30px; /* Место для кнопки очистки */
+}
+
+#clearSearch {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    color: #333;
+}
+
+#clearSearch:hover {
+    color: #f00;
 }
