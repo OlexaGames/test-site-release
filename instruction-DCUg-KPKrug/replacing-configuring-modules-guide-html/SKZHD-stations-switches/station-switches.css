@@ -203,8 +203,8 @@ button:hover {
 #clearSearch {
     position: absolute;
     right: 5px;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 14%;
+    transform: translateY(-50%) translateX(40%);
     background: none;
     border: none;
     font-size: 16px;
