@@ -82,7 +82,11 @@ function renderSections(containerId, filter = '') {
 // Функция поиска
 function searchSections() {
     let filter = document.getElementById("searchInput").value.toLowerCase();
-    renderSections('sectionsContainerSearch', filter);
+    if (filter === '') {
+        document.getElementById('sectionsContainerSearch').innerHTML = ''; // Не рендерим при пустом фильтре
+    } else {
+        renderSections('sectionsContainerSearch', filter);
+    }
 }
 
 // Функция очистки поиска
