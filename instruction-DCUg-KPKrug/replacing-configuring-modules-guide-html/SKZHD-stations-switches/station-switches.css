@@ -57,11 +57,11 @@ th, td {
   padding: 8px;
   text-align: left;
 } */
-
+/*
 body {
-  /* font-family: Arial, sans-serif;  */
+  -font-family: Arial, sans-serif; 
   margin: 20px;
-  /* background-color: rgb(17 74 130 / 10%); */
+  -background-color: rgb(17 74 130 / 10%);
 }
         
 input { 
@@ -87,7 +87,7 @@ th, td {
   border: 1px solid #ddd;
   padding: 8px;
   text-align: left;
-  /* width: 15%; */
+  -width: 15%;
 }
         
 th { 
@@ -110,4 +110,86 @@ tr:nth-child(even) {
 
 .th-name, .td-name {
     width: 10%;
+}*/ /* старый код */
+
+body {
+    /* font-family: Arial, sans-serif; */
+    margin: 20px;
+    /* background-color: rgb(17 74 130 / 10%); */
 }
+
+input {
+    margin-bottom: 10px;
+    padding: 8px;
+    width: 300px;
+}
+
+.section {
+    margin-bottom: 20px;
+}
+
+.section h2 {
+    margin-bottom: 10px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 45%;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+    /* width: 15%; */
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.td-code1, .td-code2, .th-code1, .th-code2 {
+    text-align: center;
+    width: 5%;
+}
+
+.td-num, .th-num {
+    text-align: center;
+    width: 1%;
+}
+
+.th-name, .td-name {
+    width: 10%;
+}
+
+/* Стили для меню и кнопок */
+button {
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #f2f2f2;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: #e0e0e0;
+}
+
+#menu {
+    text-align: center;
+}
+
+#searchContainer, #fullListContainer {
+    display: none;
+}
+
+#backButtonSearch, #backButtonFull {
+    margin-top: 20px;
+}
+
