@@ -12,31 +12,56 @@ async function loadData() {
         const responses = await Promise.all(
             files.map(file => 
                 fetch(file).then(response => {
-                    if (!response.ok) throw new Error(`Ошибка загрузки ${file}: ${response.status}`);
+                    if (!response.ok) {
+                        console.warn(`Не удалось загрузить ${file}: ${response.status}`);
+                        return []; // Пропускаем файл
+                    }
                     return response.json();
                 }).catch(error => {
-                    console.error(`Не удалось загрузить ${file}:`, error);
-                    return []; // Возвращаем пустой массив, чтобы продолжить с другими файлами
+                    console.warn(`Ошибка при загрузке ${file}:`, error);
+                    return []; // Пропускаем файл
                 })
             )
         );
         
         // Объединяем все участки
         allSections = responses.flat();
-        console.log('Загруженные данные:', allSections); // Для отладки
+        console.log('Загруженные данные (allSections):', allSections);
+        
+        // Проверяем структуру каждого участка
+        allSections.forEach((section, index) => {
+            console.log(`Участок ${index}:`, section);
+            if (!section.section || !Array.isArray(section.items)) {
+                console.warn(`Некорректная структура участка ${index}:`, section);
+            } else {
+                console.log(`Участок "${section.section}" содержит ${section.items.length} станций`);
+                section.items.forEach((item, itemIndex) => {
+                    console.log(`Станция ${itemIndex} в "${section.section}":`, item);
+                });
+            }
+        });
     } catch (error) {
-        console.error('Ошибка:', error);
-        alert(error.message);
+        console.error('Общая ошибка загрузки:', error);
+        alert('Ошибка загрузки данных. Проверьте консоль разработчика.');
     }
 }
 
 // Функция для отображения участков в указанном контейнере
 function renderSections(containerId, filter = '') {
-    console.log(`Рендеринг для ${containerId} с фильтром: ${filter}`); // Для отладки
+    console.log(`Рендеринг для ${containerId} с фильтром: "${filter}"`);
     const container = document.getElementById(containerId);
+    if (!container) {
+        console.error(`Контейнер ${containerId} не найден`);
+        return;
+    }
     container.innerHTML = ''; // Очищаем
     
     allSections.forEach(section => {
+        if (!section.section || !Array.isArray(section.items)) {
+            console.warn(`Пропущен участок с некорректной структурой:`, section);
+            return;
+        }
+        
         const sectionDiv = document.createElement('div');
         sectionDiv.className = 'section';
         sectionDiv.id = 'section-' + section.section.replace(/\s+/g, '-') + '-' + containerId;
@@ -59,6 +84,10 @@ function renderSections(containerId, filter = '') {
         
         const tbody = document.createElement('tbody');
         section.items.forEach(item => {
+            if (!item.num || !item.name || !item.code1 || !item.code2) {
+                console.warn(`Некорректная станция в "${section.section}":`, item);
+                return;
+            }
             const row = document.createElement('tr');
             row.innerHTML = `
                 <td class="td-num">${item.num}</td>
@@ -80,35 +109,45 @@ function renderSections(containerId, filter = '') {
             sectionDiv.style.display = visibleRows === 0 ? 'none' : 'block';
         }
         
-        container.appendChild(sectionDiv);
+        if (tbody.children.length > 0) {
+            sectionDiv.appendChild(table);
+            container.appendChild(sectionDiv);
+            console.log(`Добавлен участок "${section.section}" в ${containerId} с ${tbody.children.length} строками`);
+        } else {
+            console.log(`Участок "${section.section}" не добавлен, так как нет строк`);
+        }
     });
 }
 
 // Функция поиска
 function searchSections() {
     let filter = document.getElementById("searchInput").value.toLowerCase();
-    renderSections('sectionsContainerSearch', filter); // Перерисовываем с фильтром
+    console.log('Поиск с фильтром:', filter);
+    renderSections('sectionsContainerSearch', filter);
 }
 
 // Показать режим поиска
 function showSearchMode() {
+    console.log('Переключение в режим поиска');
     document.getElementById('menu').style.display = 'none';
     document.getElementById('searchContainer').style.display = 'block';
     document.getElementById('fullListContainer').style.display = 'none';
-    document.getElementById('searchInput').value = ''; // Очистить поиск
-    document.getElementById('sectionsContainerSearch').innerHTML = ''; // Изначально пусто
+    document.getElementById('searchInput').value = '';
+    document.getElementById('sectionsContainerSearch').innerHTML = '';
 }
 
 // Показать полный список
 function showFullList() {
+    console.log('Переключение в режим полного списка');
     document.getElementById('menu').style.display = 'none';
     document.getElementById('searchContainer').style.display = 'none';
     document.getElementById('fullListContainer').style.display = 'block';
-    renderSections('sectionsContainerFull'); // Отобразить все без фильтра
+    renderSections('sectionsContainerFull');
 }
 
 // Вернуться к меню
 function backToMenu() {
+    console.log('Возврат к меню');
     document.getElementById('menu').style.display = 'block';
     document.getElementById('searchContainer').style.display = 'none';
     document.getElementById('fullListContainer').style.display = 'none';
@@ -118,5 +157,3 @@ function backToMenu() {
 
 // Загружаем данные при загрузке страницы
 window.onload = loadData;
-
-// Новый файл
