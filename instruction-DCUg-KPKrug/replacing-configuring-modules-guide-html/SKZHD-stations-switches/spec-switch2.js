@@ -14,12 +14,16 @@ async function loadData() {
                 fetch(file).then(response => {
                     if (!response.ok) throw new Error(`Ошибка загрузки ${file}: ${response.status}`);
                     return response.json();
+                }).catch(error => {
+                    console.error(`Не удалось загрузить ${file}:`, error);
+                    return []; // Возвращаем пустой массив, чтобы продолжить с другими файлами
                 })
             )
         );
         
         // Объединяем все участки
         allSections = responses.flat();
+        console.log('Загруженные данные:', allSections); // Для отладки
     } catch (error) {
         console.error('Ошибка:', error);
         alert(error.message);
@@ -28,6 +32,7 @@ async function loadData() {
 
 // Функция для отображения участков в указанном контейнере
 function renderSections(containerId, filter = '') {
+    console.log(`Рендеринг для ${containerId} с фильтром: ${filter}`); // Для отладки
     const container = document.getElementById(containerId);
     container.innerHTML = ''; // Очищаем
     
@@ -113,3 +118,5 @@ function backToMenu() {
 
 // Загружаем данные при загрузке страницы
 window.onload = loadData;
+
+// Новый файл
