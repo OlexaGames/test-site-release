@@ -113,9 +113,7 @@ tr:nth-child(even) {
 }*/ /* старый код */
 
 body {
-    /* font-family: Arial, sans-serif; */
     margin: 20px;
-    /* background-color: rgb(17 74 130 / 10%); */
 }
 
 input {
@@ -134,14 +132,15 @@ input {
 
 table {
     border-collapse: collapse;
-    width: 45%;
+    width: 100%;
+    border: 2px solid red; /* Для отладки */
 }
 
 th, td {
     border: 1px solid #ddd;
     padding: 8px;
     text-align: left;
-    /* width: 15%; */
+    border: 1px solid blue; /* Для отладки */
 }
 
 th {
@@ -154,16 +153,16 @@ tr:nth-child(even) {
 
 .td-code1, .td-code2, .th-code1, .th-code2 {
     text-align: center;
-    width: 5%;
+    width: 20%;
 }
 
 .td-num, .th-num {
     text-align: center;
-    width: 1%;
+    width: 5%;
 }
 
 .th-name, .td-name {
-    width: 10%;
+    width: 30%;
 }
 
 /* Стили для меню и кнопок */
@@ -192,4 +191,3 @@ button:hover {
 #backButtonSearch, #backButtonFull {
     margin-top: 20px;
 }
-
