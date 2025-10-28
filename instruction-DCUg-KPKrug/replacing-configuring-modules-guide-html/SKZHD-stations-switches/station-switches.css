@@ -105,7 +105,7 @@ button:hover {
 
 /* Медиа-запросы под разные устройства */
 
-@media (min-width: 1024px) and (max-width: 1270px) {
+/* @media (min-width: 1024px) and (max-width: 1270px) {
 
 }
 
@@ -115,16 +115,37 @@ button:hover {
 
 @media (min-width: 1024px) and (max-width: 1270px) {
 
-}
+} */
 /*Прочие настройки*/
 @media (min-width: 901px) and (max-width: 1270px) {
   table {
-    width: 70%;
+      width: 70%;
   }
 }
 
 @media (min-width: 768px) and (max-width: 900px) {
   table {
-    width: 90%;
+      width: 90%;
   }
+}
+
+@media (min-width: 641px) and (max-width: 767px) {
+    table {
+        width: 90%;
+    }
+}
+
+@media (min-width: 583px) and (max-width: 640px) {
+    table {
+        width: 100%;
+    }
+}
+
+@media (min-width: 425px) and (max-width: 582px) {
+    #backButtonSearch {
+        margin-bottom: 15px;
+        margin-right: 20px;
+    }
+
+    
 }
