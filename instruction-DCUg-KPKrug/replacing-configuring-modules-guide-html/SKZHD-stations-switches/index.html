@@ -27,10 +27,12 @@
 
     <!-- Контейнер для режима поиска -->
     <div id="searchContainer" style="display: none;">
-        <button id="backButtonSearch" onclick="backToMenu()">Вернуться к меню</button>
-        <div class="search-wrapper">
-            <input type="text" id="searchInput" placeholder="Поиск по названию..." onkeyup="searchSections()">
-            <button id="clearSearch" onclick="clearSearch()">✕</button>
+        <div class="section-menu">
+            <button id="backButtonSearch" onclick="backToMenu()">Вернуться к меню</button>
+            <div class="search-wrapper">
+                <input type="text" id="searchInput" placeholder="Поиск по названию..." onkeyup="searchSections()">
+                <button id="clearSearch" onclick="clearSearch()">✕</button>
+            </div>
         </div>
         <div id="sectionsContainerSearch"></div>
     </div>
