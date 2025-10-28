@@ -141,11 +141,11 @@ button:hover {
     }
 }
 
-@media (min-width: 425px) and (max-width: 582px) {
+/* @media (min-width: 425px) and (max-width: 582px) {
     #backButtonSearch {
         margin-bottom: 15px;
         margin-right: 20px;
     }
 
     
-}
+} */
