@@ -217,3 +217,48 @@ button:hover {
         font-size: 16px;
     }
 }
+
+@media (min-width: 320px) and (max-width: 374px) {
+    #backButtonSearch {
+        margin: 0;
+        font-size: 13px;
+        margin-bottom: 15px;
+        margin-right: 20px;
+        margin-top: 10px;
+    }
+
+    #searchInput {
+        width: 95%;
+        font-size: 12px;
+    }
+
+    #clearSearch {
+        right: 0px;
+        transform: translateY(-128%) translateX(91%);
+    }
+
+    .section h2 {
+        font-size: 16px;
+    }
+
+    table {
+        width: 100%;
+    }
+
+    .td-num, .th-num {
+        font-size: 12px;
+    }
+    
+    .td-code1, .td-code2, .th-code1, .th-code2 {
+        font-size: 14px;
+    }
+
+    .th-name, .td-name {
+        width: 10%;
+        font-size: 13.5px;
+    }
+
+    body {
+        margin: 9px;
+    }
+}
