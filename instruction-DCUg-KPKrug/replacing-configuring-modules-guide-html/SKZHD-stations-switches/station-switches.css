@@ -141,11 +141,36 @@ button:hover {
     }
 }
 
-/* @media (min-width: 425px) and (max-width: 582px) {
+@media (min-width: 425px) and (max-width: 582px) {
     #backButtonSearch {
         margin-bottom: 15px;
         margin-right: 20px;
     }
+    .section h2 {
+        font-size: 21px;
+    }
+    table {
+        width: 100%;
+    }
+    .td-num, .th-num {
+        font-size: 16px;
+    }
+    .td-code1, .td-code2 {
+        width: 4%;
+        font-size: 17px;
+    }
 
-    
-} */
+    .th-code1, .th-code2 {
+        width: 4%;
+        font-size: 16px;
+    }
+
+    .th-name {
+        width: 15%;
+        font-size: 16px;
+    }
+
+    .td-name {
+        font-size: 17px;
+    }
+}
