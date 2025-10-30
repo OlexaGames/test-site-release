@@ -68,6 +68,11 @@ button:hover {
     text-align: center;
 }
 
+#menu button {
+    max-width: 180px;
+    width: 100%;
+}
+
 #searchContainer, #fullListContainer {
     display: none;
 }
@@ -260,5 +265,14 @@ button:hover {
 
     body {
         margin: 9px;
+    }
+
+    #menu button {
+        width: 55%;
+        font-size: 15px;
+    }
+
+    #menu h1 {
+        font-size: 28px;
     }
 }
