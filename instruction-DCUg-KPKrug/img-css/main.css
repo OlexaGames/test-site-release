@@ -105,7 +105,7 @@ header {
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
-	background: url("rzd.png") no-repeat;
+	background: url("rzd.webp") no-repeat;
 	background-size: cover;
 	height: calc(100vh - 80px);
 }
@@ -303,3 +303,4 @@ body.no-scroll {
         opacity: 0;
     }
 }
+
