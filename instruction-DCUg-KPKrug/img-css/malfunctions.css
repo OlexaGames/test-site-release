@@ -1,0 +1,179 @@
+body {
+    overflow-y: scroll;
+}
+
+main {
+    padding-top: 6em;
+/*    margin: 0 20px;*/
+}
+
+.issue-title {
+    max-width: 1250px;
+    margin: 24px auto 0;
+    background-color: white;
+    border-radius: 30px;
+    padding: 15px 35px 25px;
+    box-shadow: 7px 7px 10px #00000047;
+}
+
+ .text-guide {
+    max-width: 1250px;
+    width: 100%;
+    margin: 24px auto 0;
+ }
+
+.dropbtn {
+    cursor: pointer;
+    display: flex;
+    padding: 0 20px 0 20px;
+    max-width: 1200px;
+    width: 100%;
+    height: 70px;
+    background-color: #114a8214;
+    border: 3px ridge #114a8224;
+    border-radius: 20px;
+    color: #154977;
+    font-size: 1.35em; /* по умолчанию - 1.5em; */ /* для мобилок 1.3em */
+    font-weight: 500;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dropbtn, .dropdown-content {
+    position: relative;
+    margin: 0 auto;
+}
+
+.dropdown-content {
+    display: flex;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 400ms ease;
+    justify-content: flex-end;
+}
+
+.dropdown-content .group-decision-solving {
+    margin-top: 20px;
+    margin-bottom: 15px;
+    left: -3em;
+}
+
+.show {
+    max-height: 1000px;
+    transition: max-height 600ms ease;
+}
+
+.decision {
+    cursor: pointer;
+    display: flex;
+    left: 17.2em; /*8em;*/
+    padding: 10px 20px;
+    max-width: 864px;
+    width: 100%;
+    min-height: 40px;
+    height: auto;
+    background-color: white;
+    border: 3px ridge #114a8242;
+    border-radius: 20px;
+    color: #154977;
+    font-size: 1.1em;
+    font-weight: 700;
+    align-items: center;
+    box-shadow: 0px 0px 10px #00000026;
+}
+
+a {
+    text-decoration: none;
+}
+
+.down-arrow {
+    transform: rotateZ(270deg);
+    margin-left: 5em;
+}
+
+.decision p {
+    margin: 0;
+}
+
+.change {
+    flex-grow: 1;
+    color: #45b5b4;
+}
+
+.pointer {
+    vertical-align: -2px;
+    margin: 0 15px;
+}
+
+.preface {
+    max-width: 1250px;
+    margin: 24px auto 0;
+    padding: 15px 35px 25px;
+    /*margin-top: 24px;*/
+    background-color: white;
+    border-radius: 30px;
+    box-shadow: 7px 7px 10px #00000047;
+}
+
+.variation-malfunctions {
+    margin-top: 24px;
+}
+
+.group-decision-solving .decision {
+    margin-top: 10px;
+}
+
+.group-decision-solving {
+    background-color: white;
+    border-radius: 30px;
+    box-shadow: 7px 7px 10px #00000047;
+    max-width: 910px;
+    width: 100%;
+    margin: 0;
+    padding: 15px 15px;
+    left: 18em;
+}
+
+.titlebtn {
+    margin: 0px;
+    font-family: Segoe UI, sans-serif;
+    font-weight: 700;
+}
+
+.preface-decision {
+    margin-top: 0;
+    text-indent: 3em;
+}
+
+.decision:not(.group-decision-solving > .decision), .group-decision-solving {
+    margin-bottom: 20px;
+    position: relative;
+    /*left: 9em;*/
+}
+
+.image-malfunction {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1250px;
+    width: fit-content;
+    margin: 0 auto;
+    margin-bottom: 24px;
+    padding: 0 35px 15px;
+    background-color: white;
+    border-radius: 30px;
+    box-shadow: 7px 7px 10px #00000047;
+}
+
+.caption {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.image-malfunction img {
+    width: 100%;
+}
+
+.image-guide {
+    margin: 24px auto 0;
+}
