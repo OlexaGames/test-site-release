@@ -1,0 +1,240 @@
+@media (min-width: 1024px) and (max-width: 1311px) {
+    main {
+        margin: 0 20px;
+    }
+
+    .issue-title {
+        width: 90%;
+    }
+
+    .text-guide .preface {
+    	width: 90%;
+    }
+
+/*    .text-guide .variation-malfunctions .dropbtn {
+    	width: 95%;
+    }
+
+    .text-guide 
+*/
+}  /* Разрешение 1024 - 1250 */ 
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .menu .menu-element {
+        font-size: 14px;
+    }
+
+    /* Голова сайта */
+
+	.logo-header {
+		width: 85%;
+	}
+
+	.menu li, .menu .menu-element {
+		width: 144px;
+	}
+
+	.menu .menu-element {
+		font-size: 14px;
+	}
+
+	.image-btn {
+		margin-right: 0;
+	}
+
+	/* Содержимое раздела */
+
+	.text-guide .issue-title {
+		padding: 15px 30px 10px;
+	}
+
+	.chapter-title {
+		font-size: 26px;
+	}
+
+	.variation-malfunctions .dropbtn {
+		width: 90%;
+		font-size: 1.15em;
+	}
+
+	.dropbtn .title-btn {
+		width: 89%;
+	}
+
+	.group-decision-solving .preface-decision {
+		font-size: 16px;
+    	padding-left: 20px;
+    	text-indent: 0;
+	}
+
+}    /* Разрешение 768 - 1023 */
+
+@media (min-width: 320px) and (max-width: 767px) {
+    .logo-header {
+        display: none;
+    }
+
+    .logo-mobile {
+        display: block;
+    }
+
+    .chapter-title {
+        font-size: 21px;
+    }
+
+    .media-possible {
+        padding-top: 2.25em;
+    }
+
+    .text-guide {
+    	margin: 15px auto 0;
+    }
+
+    .text-guide .group-decision-solving .preface-decision {
+        font-size: 16px;
+        padding-left: 15px;
+        padding-right: 15px;
+        text-indent: 0;
+    }
+
+    .variation-malfunctions .dropbtn {
+        width: 90%;
+        font-size: 1.11em;
+        height: max-content;
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+
+    .variation-malfunctions .dropbtn .arrow {
+    	margin-left: 6px;
+    	margin-right: 6px;
+    }
+
+}		/* Разрешение 320 - 767 */
+
+/* --- Прочие настройки ---  */
+
+@media (min-width: 320px) and (max-width: 1023px) {
+	body {
+		background-color: white;
+	}
+
+	.text-guide .preface, .media-possible .issue-title, .text-guide .group-decision-solving {
+		background-color: transparent;
+		border-radius: 0;
+		box-shadow: none;
+		margin-top: 0;
+	}
+
+    .line-1 {
+        background: linear-gradient(90deg, #114A82 0, rgba(198, 224, 245, .529849) 80%, #ffffff00 100%);
+    }
+
+	.dropdown-content .group-decision-solving, .text-guide .group-decision-solving {
+		display: flex;
+		/*margin-right: 0;*/
+		width: 80%;
+    	/*margin: 0 auto;*/
+    	background-color: #114a8214;
+	    border-radius: 30px;
+	    border: 3px #114a8224 ridge;
+	    flex-direction: column;
+	    align-items: center;
+	}
+
+	.text-guide .decision p {
+		text-align: center;
+	}
+
+    .text-guide .preface {
+        padding: 0 30px 15px;
+    }
+
+	.text-guide .group-decision-solving .decision, .text-guide .decision {
+		width: 90%; /* было 35% 55% 65%*/
+		min-width: 0;
+		font-size: 1em;
+	    flex-direction: column;
+	}
+
+	.text-guide .decision {
+		/*margin: 10px auto 0;*/
+		width: 72%;
+	}
+
+	.text-guide .decision .pointer {
+		transform: rotate(90deg) translateX(3px);
+	}
+
+	.text-guide .decision .down-arrow {
+		margin-left: 0;
+		margin-top: 8px;
+	}
+
+	.image-guide .image-malfunction {
+		background-color: transparent;
+		border-radius: 0;
+		box-shadow: none;
+	}
+
+    .text-guide .group-decision-solving .preface-decision {
+    	text-indent: 0;
+    }
+
+}
+
+@media (min-width: 1312px) and (max-width: 1456px) {
+	.media-possible .issue-title {
+		width: 90%;
+	}
+}
+
+@media (min-width: 425px) and (max-width: 767px) {
+    .text-guide .group-decision-solving .decision, .text-guide .decision {
+    	font-size: 0.96em;
+    }
+}
+
+@media (min-width: 320px) and (max-width: 425px) {
+    .text-guide .group-decision-solving .decision, .text-guide .decision {
+    	font-size: 0.92em;
+    	width: 88%;
+    }
+
+    .text-guide .decision {
+    	width: 70%;
+    }
+
+    .text-guide .group-decision-solving .preface-decision {
+        font-size: 15px;
+        padding-left: 8px;
+        padding-right: 8px;
+        text-indent: 0;
+    }
+
+    .media-possible .issue-title {
+    	padding: 15px 25px 20px;
+    }
+
+    .image-malfunction .caption {
+    	font-size: 15px;
+    }
+
+    .text-guide .preface {
+    	font-size: 16px;
+    }
+
+}
+
+@media (min-width: 320px) and (max-width: 1311px) {
+    .text-guide .decision:not(.group-decision-solving > .decision) {
+        margin: 0 auto 20px;
+        left: 0;
+    }
+
+    .media-possible .text-guide .group-decision-solving {
+		left: 0;
+		margin: 20px auto 20px;
+    }
+
+}
