@@ -16,22 +16,22 @@
 	<div class="guide1-malfunctions-linear-page">
 		<header-component></header-component>
 		<main class="media-possible">
+			<section class="issue-title">
+				<h2 class="chapter-title">1. Отсутствие связи Линейного Пункта с Центральным Постом</h2>
+				<hr class="line-1">
+			</section>
 			<section class="text-guide">
-				<div class="issue-title">
-					<h2 class="chapter-title">1. Отсутствие связи Линейного Пункта с Центральным Постом</h2>
-					<hr class="line-1">
-				</div>
 				<div class="preface">
 					<p>
 						На дисплейном блоке (БД), отображающим состояние Контролируемого пункта (КП), наличие связи ЛП с ЦП будет подсвечиваться зелёными квадратиками в модемном поле канала А (COM3) и канала B (COM4), как показано на рисунке ниже. Если связь ЛП с ЦП отсутствует, то квадаратики в модемном поле подсвечиваются белым цветом. В этом случае необходимо на КП осуществить переход с «Основного» комплекта на «Резервный».
 					</p>
 				</div>
 				<div class="variation-malfunctions v-m1">
-			  		<button onclick="myFunction('DropdownMalfunction1')" class="dropbtn">
+			  		<button onclick="subMyFunction('subDropdownMalfunction1')" class="dropbtn">
 			  			<p class="titlebtn">1.1. При переходе на «Резервный» комплект связь ЛП с ЦП восстанавливается</p>
 			  			<img src="../../instruction-DCUg-KPKrug/img-css/arrow.png" class="arrow">
 			  		</button>
-			  		<div id="DropdownMalfunction1" class="dropdown-content">
+			  		<div id="subDropdownMalfunction1" class="dropdown-content">
 			  			<div class="group-decision-solving">	
 				  			<p class="preface-decision">
 				  				Для устранения неисправности на «Основном» комплекте необходимо последовательно поменять некоторые модули, на этом комплекте, предварительно отключив на нём питание.
@@ -52,11 +52,11 @@
 			  		</div>
 				</div>
 				<div class="variation-malfunctions v-m2">
-			  		<button onclick="myFunction('DropdownMalfunction2')" class="dropbtn">
+			  		<button onclick="subMyFunction('subDropdownMalfunction2')" class="dropbtn">
 			  			<p class="titlebtn">1.2. При переходе на «Резервный» комплект связь ЛП с ЦП не восстанавливается</p>
 			  			<img src="../../instruction-DCUg-KPKrug/img-css/arrow.png" class="arrow">
 			  		</button>
-			  		<div id="DropdownMalfunction2" class="dropdown-content">
+			  		<div id="subDropdownMalfunction2" class="dropdown-content">
 			  			<div class="group-decision-solving">
 				  			<p class="preface-decision">
 				  				При этом зелёные индикаторы состояния на МИГ-2АТ мигают, как на «Основном» так и на «Резервном» комплекте. Мигание зелёных индикаторов означает разрыв связи МИГ-2АТ на КП с модемами связевого шкафа.
