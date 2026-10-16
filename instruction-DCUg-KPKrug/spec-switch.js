@@ -1,10 +1,8 @@
       async function loadData() {
             try {
-                
                 const response1 = await fetch('data1.json');
                 if (!response1.ok) throw new Error('Ошибка загрузки data1.json: ' + response1.status);
                 const data1 = await response1.json();
-                
                 
                 const response2 = await fetch('data2.json');
                 if (!response2.ok) throw new Error('Ошибка загрузки data2.json: ' + response2.status);
