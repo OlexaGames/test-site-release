@@ -25,13 +25,13 @@ header {
 
 .arrow {
     width: 20px;
-    padding-left: 28px;
+    /* padding-left: 28px; */
     transition: transform 0.3s ease;
 }
 
 .dropbtn.active .arrow {
     transform: rotate(180deg);
-	padding-left: 0;
+	/* padding-left: 0; */
 }
 
 footer {
