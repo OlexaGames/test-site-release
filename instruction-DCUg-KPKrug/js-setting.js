@@ -1,10 +1,20 @@
+
 function myFunction(id) {
   var element = document.getElementById(id);
+
   if (element) {
     element.classList.toggle("show");
+    var button = element.previousElementSibling;
 
-  if (element.classList.contains("show")) {
-  localStorage.setItem("showElementId", id);
+    if (button && button.classList.contains("dropbtn")) {
+      button.classList.toggle(
+        "active",
+        element.classList.contains("show")
+      );
+    }
+
+    if (element.classList.contains("show")) {
+      localStorage.setItem("showElementId", id);
     } else {
       localStorage.removeItem("showElementId");
     }
@@ -13,16 +23,26 @@ function myFunction(id) {
 
 function subMyFunction(id) {
   var element = document.getElementById(id);
+
   if (element) {
     element.classList.toggle("show");
+    var button = element.previousElementSibling;
 
-  if (element.classList.contains("show")) {
-  localStorage.setItem("showSubElementId", id);
+    if (button && button.classList.contains("dropbtn")) {
+      button.classList.toggle(
+        "active",
+        element.classList.contains("show")
+      );
+    }
+
+    if (element.classList.contains("show")) {
+      localStorage.setItem("showSubElementId", id);
     } else {
       localStorage.removeItem("showSubElementId");
     }
   }
 }
+
 
 document.addEventListener("DOMContentLoaded", function() {
   var showElementId = localStorage.getItem("showElementId");
