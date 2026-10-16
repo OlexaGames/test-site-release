@@ -74,3 +74,12 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+document.querySelectorAll(".dropbtn").forEach(function(button) {
+  var element = button.nextElementSibling;
+  if (element && element.classList.contains("show")) {
+    button.classList.add("active");
+  } 
+  else {
+    button.classList.remove("active");
+  }
+});
