@@ -71,7 +71,7 @@ footer {
 	max-width: 1050px; /*по умолчанию 1100px*/
 	width: 100%;
 	max-height: 0;
-	transition: max-height 400ms ease;
+	transition: max-height 0.3s ease; /*400ms*/
 }
 
 .show {
