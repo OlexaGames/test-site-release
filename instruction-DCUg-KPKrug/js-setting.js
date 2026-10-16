@@ -60,6 +60,16 @@ document.addEventListener("DOMContentLoaded", function() {
       element2.classList.add("show");
     }
   }
+
+  document.querySelectorAll(".dropbtn").forEach(function(button) {
+    var element = button.nextElementSibling;
+
+    if (element && element.classList.contains("show")) {
+      button.classList.add("active");
+    } else {
+      button.classList.remove("active");
+    }
+  });
 });
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -71,15 +81,4 @@ document.addEventListener('DOMContentLoaded', () => {
     const copyrightElement = document.querySelector('.copyright');
     const currentYear = new Date().getFullYear();
     copyrightElement.textContent = `Ⓒ1992-${currentYear} ООО НПЦ «Промавтоматика»`;
-});
-
-
-document.querySelectorAll(".dropbtn").forEach(function(button) {
-  var element = button.nextElementSibling;
-  if (element && element.classList.contains("show")) {
-    button.classList.add("active");
-  } 
-  else {
-    button.classList.remove("active");
-  }
 });
