@@ -60,7 +60,15 @@ main {
 
 .show {
     max-height: 1000px;
-    transition: max-height 600ms ease;
+}
+
+.arrow {
+    width: 20px;
+    transition: transform 0.3s ease;
+}
+
+.dropbtn.active .arrow {
+    transform: rotate(180deg);
 }
 
 .decision {
