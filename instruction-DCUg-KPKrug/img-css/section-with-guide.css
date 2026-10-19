@@ -60,23 +60,23 @@ footer {
 	margin: 0 auto;
 }
 
+
 .dropdown-content {
-	display: block;
-	overflow: hidden;
-	background-color: #114a820d;
-	border-left: 3px ridge #114a8224;
-	border-right: 3px ridge #114a8224;
-	border-bottom: 3px ridge #114a8224;		
-	border-radius: 0px 0px 20px 20px;
-	max-width: 1050px; /*по умолчанию 1100px*/
-	width: 100%;
-	max-height: 0;
-	transition: max-height 0.3s ease; /*400ms*/
+    display: block;
+    overflow: hidden;
+    background-color: #114a820d;
+    border-left: 3px ridge #114a8224;
+    border-right: 3px ridge #114a8224;
+    border-bottom: 3px ridge #114a8224;
+    border-radius: 0px 0px 20px 20px;
+    max-width: 1050px;
+    width: 100%;
+    max-height: 0;
+    transition: max-height 0.3s ease;
 }
 
-.show {
-	max-height: 1500px;
-	transition: max-height 600ms ease;
+.dropdown-content.show {
+    max-height: 1500px;
 }
 
 .empty {
