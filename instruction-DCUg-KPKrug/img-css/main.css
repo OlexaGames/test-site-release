@@ -84,12 +84,8 @@ header {
 
 .logo-mobile {
 	display: none;
-/*	width: 95px;*/
-/*	width: 75px;*/
 	width: 120px;
     margin-bottom: 6px;
-/*	max-width: 280px;
-	width: 100%;*/
 }
 
 .image-btn {
