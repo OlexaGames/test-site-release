@@ -1,3 +1,16 @@
+/* ----Картинка заглавного меню---- */
+
+.main-wrapper-title {
+	display: flex;
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	background: url("rzd.webp") no-repeat;
+	background-size: cover;
+	height: calc(100vh - 80px);
+}
+
 /* ----Общие свойства---- */
 
 body {
@@ -94,17 +107,6 @@ header {
 }
 
 /* ----Основа Сайта---- */
-
-.main-wrapper-title {
-	display: flex;
-	text-align: center;
-	align-items: center;
-	justify-content: center;
-	flex-direction: column;
-	background: url("rzd.webp") no-repeat;
-	background-size: cover;
-	height: calc(100vh - 80px);
-}
 
 .cheese-line {
 	padding: 0;
