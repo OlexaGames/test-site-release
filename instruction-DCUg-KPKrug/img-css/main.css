@@ -101,7 +101,7 @@ header {
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
-	background: url("rzd3.jpg") no-repeat; /*rzd.webp*/
+	background: url("rzd.webp") no-repeat;
 	background-size: cover;
 	height: calc(100vh - 80px);
 }
