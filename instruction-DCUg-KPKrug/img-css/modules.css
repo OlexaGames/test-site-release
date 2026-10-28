@@ -14,9 +14,9 @@ header {
 
 .title-image, .text-guide {
 	background-color: white;
-    	border-radius: 30px;
-    	padding: 15px 35px 25px;
-    	box-shadow: 7px 7px 10px #00000047;
+    border-radius: 30px;
+    padding: 15px 35px 25px;
+    box-shadow: 7px 7px 10px #00000047;
 }
 
 .title-section {
@@ -25,19 +25,19 @@ header {
 
 .text-guide {
 	margin-top: 30px;
-    	margin-bottom: 30px;
-    	width: auto;
+    margin-bottom: 30px;
+    width: auto;
 /*    width: 70%;*/
 /*    width: 55%;*/
-    	font-weight: 400;
+    font-weight: 400;
 }
 
 .module-photo {
 	display: block;
 	margin: 20px auto 10px;
-    	background-color: #a9a9a947;
-    	border-radius: 30px;
-    	padding: 0 50px;
+    background-color: #a9a9a947;
+    border-radius: 30px;
+    padding: 0 50px;
 }
 
 p {
@@ -47,4 +47,31 @@ p {
 ol {
 	margin-top: 0;
 	padding-left: 5em;
+}
+
+.btn-transition {
+	
+}
+
+.btn-transition .arrow-href {
+	width: 20px;
+	transform: rotateZ(270deg);
+}
+
+.btn-transition .link {
+    cursor: pointer;
+    display: flex;
+    margin: 0 auto;
+    text-decoration: none;
+    max-width: 400px;
+    height: 70px;
+    border-radius: 20px;
+    color: #154977;
+    font-size: 17px;
+    font-weight: 500;
+    justify-content: center;
+    background-color: #114a8224;
+    border: 3px ridge #114a8224;
+    align-items: center;
+    flex-direction: column;
 }
