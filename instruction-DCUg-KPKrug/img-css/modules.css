@@ -49,16 +49,12 @@ ol {
 	padding-left: 5em;
 }
 
-.btn-transition {
-	
-}
-
-.btn-transition .arrow-href {
+.link .arrow-href {
 	width: 20px;
 	transform: rotateZ(270deg);
 }
 
-.btn-transition .link {
+.link {
     cursor: pointer;
     display: flex;
     margin: 0 auto;
