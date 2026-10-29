@@ -94,7 +94,7 @@ ol {
     font-weight: 500;
     line-height: 1.35;
 
-    background-color: #114a8214;
+    background-color: #114a8230;
     border: 2px solid #b8c9da;
     border-radius: 20px;
 
@@ -105,7 +105,7 @@ ol {
 }
 
 .link:active {
-    background-color: #114a8230;
+	background-color: #114a8214;
 }
 
 .link:focus-visible {
