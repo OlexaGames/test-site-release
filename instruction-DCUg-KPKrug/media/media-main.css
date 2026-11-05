@@ -107,8 +107,13 @@
 		font-size: 1.28em;
 	}
 
+	.dropbtn .subsection button {
+		font-size: 1.10em;
+	}
+
 	.dropdown-content ul, .dropdown-content ol {
 		font-size: 16px;
+		padding-left: 10px;
 	}
 }    /* Разрешение 320 - 768 */
 
