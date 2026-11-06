@@ -34,6 +34,21 @@ header {
 	/* padding-left: 0; */
 }
 
+.dropbtn {
+    transition:
+        background-color 0.2s ease,
+        transform 0.12s ease;
+}
+
+ .dropbtn:hover {
+    background-color: #114a823d;
+}
+
+.dropbtn:active {
+    background-color: #114a8255;
+    transform: scale(0.995);
+}
+
 footer {
 	width: 100%;
 	position: fixed;
