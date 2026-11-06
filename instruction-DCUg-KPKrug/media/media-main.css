@@ -108,7 +108,7 @@
 	}
 
 	.subsection .sub-dropbtn .titlebtn {
-		font-size: 1.10em;
+        font-size: 0.95em;
 	}
 
 	.dropdown-content ul, .dropdown-content ol {
@@ -161,7 +161,6 @@
 
 @media (min-width: 384px) and (max-width: 767px) {
 	.dropdown-content ul, .dropdown-content ol {
-		font-size: 18px;
+		font-size: 17px;
 	}
-
 }
