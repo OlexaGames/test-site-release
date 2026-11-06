@@ -40,8 +40,10 @@ header {
         transform 0.12s ease;
 }
 
- .dropbtn:hover {
-    background-color: #114a8240;
+@media (hover: hover) and (pointer: fine) {
+	.dropbtn:hover {
+	    background-color: #114a8240;
+	}
 }
 
 .dropbtn:active {
