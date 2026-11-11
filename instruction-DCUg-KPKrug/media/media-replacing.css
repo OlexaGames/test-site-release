@@ -140,6 +140,10 @@
 		font-size: 15px;
 	}
 
+	.text-guide ol {
+		padding-left: 3em;
+	}
+
 	.text-guide p {
 		text-indent: 0;
 	}
