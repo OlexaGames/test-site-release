@@ -37,6 +37,8 @@ main {
     font-weight: 500;
     justify-content: space-between;
     align-items: center;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
 }
 
 .arrow {
