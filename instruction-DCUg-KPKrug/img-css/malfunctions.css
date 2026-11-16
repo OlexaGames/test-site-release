@@ -39,6 +39,34 @@ main {
     align-items: center;
 }
 
+.arrow {
+    /*width: 20px;*/
+    /* padding-left: 28px; */
+    transition: transform 0.3s ease;
+}
+
+.dropbtn.active .arrow {
+    transform: rotate(180deg);
+    /* padding-left: 0; */
+}
+
+.dropbtn {
+    transition:
+        background-color 0.2s ease,
+        transform 0.12s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .dropbtn:hover {
+        background-color: #114a8240;
+    }
+}
+
+.dropbtn:active {
+    background-color: #114a8255;
+    transform: scale(0.995);
+}
+
 .dropbtn, .dropdown-content {
     position: relative;
     margin: 0 auto;
