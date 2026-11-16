@@ -113,8 +113,12 @@
 
 	.dropdown-content ul, .dropdown-content ol {
 		font-size: 16px;
+	}
+
+	.dropdown-content ul {
 		padding-left: 10px;
 	}
+
 }    /* Разрешение 320 - 768 */
 
 /* --- Прочие настройки --- */
