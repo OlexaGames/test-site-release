@@ -41,17 +41,6 @@ main {
     -webkit-touch-callout: none;
 }
 
-.arrow {
-    /*width: 20px;*/
-    /* padding-left: 28px; */
-    transition: transform 0.3s ease;
-}
-
-.dropbtn.active .arrow {
-    transform: rotate(180deg);
-    /* padding-left: 0; */
-}
-
 .dropbtn {
     transition:
         background-color 0.2s ease,
@@ -67,6 +56,17 @@ main {
 .dropbtn:active {
     background-color: #114a8255;
     transform: scale(0.995);
+}
+
+.arrow {
+    /*width: 20px;*/
+    /* padding-left: 28px; */
+    transition: transform 0.3s ease;
+}
+
+.dropbtn.active .arrow {
+    transform: rotate(180deg);
+    /* padding-left: 0; */
 }
 
 .dropbtn, .dropdown-content {
@@ -102,7 +102,6 @@ main {
 }
 
 .decision {
-    cursor: pointer;
     display: flex;
     left: 17.2em; /*8em;*/
     padding: 10px 20px;
@@ -118,6 +117,27 @@ main {
     font-weight: 700;
     align-items: center;
     box-shadow: 0px 0px 10px #00000026;
+}
+
+.decision .ref {
+    cursor: pointer;
+}
+
+.ref {
+    transition:
+        background-color 0.2s ease,
+        transform 0.12s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .ref:hover {
+        background-color: #e8e8e8;
+    }
+}
+
+.ref:active {
+    background-color: #dfdfdf;
+    transform: scale(0.995);
 }
 
 a {
