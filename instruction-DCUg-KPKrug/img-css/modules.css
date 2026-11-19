@@ -101,11 +101,22 @@ ol {
     transition:
         background-color 0.2s ease,
         border-color 0.2s ease,
-        box-shadow 0.2s ease;
+        box-shadow 0.2s ease,
+        transform 0.12s ease;
+
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
 }
 
 .link:active {
-	background-color: #114a8214;
+    background-color: #114a8255;
+    transform: scale(0.995);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .link:hover {
+        background-color: #114a8240;
+    }
 }
 
 .link:focus-visible {
